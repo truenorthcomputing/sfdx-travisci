@@ -15,8 +15,8 @@ before_install:
 - sfdx update
 - sfdx --version
 - sfdx plugins --core
-- sfdx force:auth:jwt:grant --clientid 3MVG9KI2HHAq33RxVsbCb9ET4ZsMzRumGyzc3ZalfXIaZopCaxjuXLmYZ8c6i86nkzeveGL9NRmJOLwqKsq2e
-  --jwtkeyfile assets/server.key --username truenorthcomputing@isvedition.com --setdefaultdevhubusername
+- sfdx force:auth:jwt:grant --clientid $CONSUMERKEY
+  --jwtkeyfile assets/server.key --username $USERNAME --setdefaultdevhubusername
   -a HubOrg
 script:
 - sfdx force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg
